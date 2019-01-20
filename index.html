@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>我的网页</title>
   <link rel="stylesheet" href="./main.css">
@@ -15,24 +14,35 @@
     }
   </style>
 </head>
-
 <body>
   <div class="site-welcome active" id=siteWelcome>
     <div class="loading"></div>
   </div>
-  <div class="topNavBar">
+  <div id= topNavBar class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left;">
         <span class="rs">RS</span><span class="card">card</span>
-        <nav style="float: right;">
+        <nav class="menu" style="float: right;">
           <ul class="clearfix">
-            <li><a href="#">关于</a>
-            <li><a href="#">技能</a>
-            <li><a href="#">作品</a>
-            <li><a href="#">博客</a>
-            <li><a href="#">日历</a>
-            <li><a href="#">联系方式</a>
-            <li><a href="#">其他</a>
+            <li><a href="#siteAbout">关于</a></li>
+            <li><a href="#siteSkills">技能</a></li>
+            <li>
+              <a href="#siteWorks">作品</a>
+              <ul class="submenu">
+                <li>作品1</li>
+                <li>作品2</li>
+                <li>作品3</li>
+              </ul></li>
+            <li>
+              <a>博客</a>
+              <ul class="submenu">
+                <li>博客1</li>
+                <li>博客2</li>
+                <li>博客3</li>
+              </ul></li>
+            <li><a>日历</a></li>
+            <li><a>联系方式</a></li>
+            <li><a>其他</a></li>
           </ul>
         </nav>
     </div>
@@ -41,7 +51,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div class="userCard">
+    <div id=siteAbout class="userCard">
       <div class="profile clearfix">
         <div class="picture">
           <img src="./img/avatar.jpg" width=299 height=347 alt="头像">
@@ -90,7 +100,7 @@
       李冬阳，毕业于北京语言大学计算机专业
     </p>
   </main>
-  <section class="skills">
+  <section id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix" ;>
       <li>
@@ -132,7 +142,7 @@
     </ol>
   </section>
   <section class="portfolio">
-    <h2>作品集</h2>
+    <h2 id="siteWorks">作品集</h2>
     <nav>
       <ol class="clearfix">
         <li id="portfolio1">所有</li>
