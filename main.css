@@ -40,6 +40,7 @@ h1,h2,h3,h4,h5,h6{
     display: block;
     clear: both;
 }
+
 .topNavBar {
     padding: 20px 0;
     position: fixed;
@@ -84,7 +85,8 @@ h1,h2,h3,h4,h5,h6{
   display: block;
   position: relative;
 }
-.topNavBar nav > ul > li.active > a::after{
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after{
     content:'';
     display: block;
     position: absolute;
@@ -102,6 +104,13 @@ h1,h2,h3,h4,h5,h6{
     100%{
         width: 100%;
     }
+}
+[data-x].offset{
+    transform: translateY(100px)
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 0.5s;
 }
 .topNavBar .submenu{
     display: none;
