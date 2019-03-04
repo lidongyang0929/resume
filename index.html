@@ -2,8 +2,10 @@
 <html>
 <head>
   <title>我的网页</title>
-  <link rel="stylesheet" href="./main.css">
+  
   <link rel="stylesheet" href="./loading.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <link rel="stylesheet" href="./main.css">
   <style type="text/css">
     .icon {
       width: 1em;
@@ -15,13 +17,14 @@
   </style>
 </head>
 <body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
   <div class="site-welcome active" id=siteWelcome>
     <div class="loading"></div>
   </div>
   <div id= topNavBar class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left;">
-        <span class="rs">RS</span><span class="card">card</span>
+        <span class="rs">RS</span><span class="card">card</span></a>
         <nav class="menu" style="float: right;">
           <ul class="clearfix">
             <li><a href="#siteAbout">关于</a></li>
@@ -143,39 +146,20 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
-      </div>
-    </nav>
-    <script>
-      portfolio1.onclick = function () {
-        portfolioBar.className = 'bar state-1'
-      }
-      portfolio2.onclick = function () {
-        portfolioBar.className = 'bar state-2'
-      }
-      portfolio3.onclick = function () {
-        portfolioBar.className = 'bar state-3'
-      }
-    </script>
-    <div class="works" style="height:597px;">
-      <div class="big" style="top: 0; left :0;">
-        <img src="./img/1.jpg" alt="作品1">
-      </div>
-      <div class="small" style="top: 0; left: 645px;">
-        <img src="./img/2.jpg" alt="作品2">
-      </div>
-      <div class="small" style="top: 300px; left: 645px;">
-        <img src="./img/3.jpg" alt="作品3">
-      </div>
+    <div class="swiper-container" style="background: grey;">
+        <div class="swiper-wrapper">
+            <img class="swiper-slide" src="./demo/demo-1.jpg">
+            <img class="swiper-slide" src="./demo/demo-2.jpg">
+            <img class="swiper-slide" src="./demo/demo-3.jpg">   
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
-  </section>
+    <div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+  </section> 
+
 </body>
 <script src="//at.alicdn.com/t/font_925656_fzf3sqhjjtv.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>

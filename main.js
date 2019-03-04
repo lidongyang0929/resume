@@ -42,7 +42,7 @@ for(let i =0; i< aTags.length;i++){
 
 setTimeout(function(){
     siteWelcome.classList.remove('active')
-}, 1000);
+}, 2000);
 
 let specialTags =  document.querySelectorAll('[data-x]')
 for(let i =0;i<specialTags.length;i++){
@@ -79,6 +79,29 @@ window.onscroll = function(){
         li.classList.add('highlight')
     
     }
+
+        var mySwiper = new Swiper ('.swiper-container', {
+          // Optional parameters
+         
+          loop: true,
+      
+          // If we need pagination
+          pagination: {
+            el: '.swiper-pagination',
+          },
+      
+          // Navigation arrows
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+      
+          // And if we need scrollbar
+          scrollbar: {
+            el: '.swiper-scrollbar',
+          },
+        })
+       
     
    
 

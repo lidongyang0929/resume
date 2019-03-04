@@ -11,7 +11,10 @@ a{
     padding: 0;
 }
 .site-welcome{
-    display: none;
+    display: none;   
+}
+.site-welcome.active{
+    display: flex;
     top: 0; left: 0;
     width: 100%; height: 100%;
     justify-content: center;
@@ -19,9 +22,6 @@ a{
     position: fixed;
     z-index: 1;
     background: white;
-}
-.site-welcome.active{
-    display: flex;
     
 }
 hr{
@@ -113,17 +113,17 @@ h1,h2,h3,h4,h5,h6{
     transition: all 0.5s;
 }
 .topNavBar .submenu{
-    display: none;
+    display: none;  
+}
+.topNavBar li.active > .submenu{
+    display: block;
+    animation: submenuSlide 1s;
     position: absolute;
     top: 100%;
     right: 0;
     background: white;
     color: #3d4451;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-.topNavBar li.active > .submenu{
-    display: block;
-    animation: submenuSlide 1s;
 }
 @keyframes submenuSlide{
     0%{
@@ -321,56 +321,17 @@ section.skills .progressBar > .progress{
 }
 section.portfolio{
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
+    width: 860px;
 }
-section.portfolio > nav{
-    text-align: center;
-    display:inline-block;
-    vertical-align: top;
-    margin-top: 32px;
+section.portfolio h2{
+    margin-bottom: 32px;}
+
+.swiper-container {
+    width: 720px;
+    height: 540px;
 }
-section.portfolio > nav >ol{
-    margin: 0 auto;
-    display: inline-block;
-    vertical-align: top;
-}
-section.portfolio > nav > ol > li{
-    float: left;
-    margin-left: 40px;
-    cursor: pointer;
-}
-section.portfolio > nav > ol > li:nth-child(1){
-    margin-left: 0;
-}
-section.portfolio > nav > .bar{
-   height: 5px;
-   background: white;
-   margin-top: 5px;
-   margin-bottom: 28px;
-   border-radius: 2px;
-}
-section.portfolio > nav .bar-inner{
-   height: 100%;
-   background: #E6685A;
-   border-radius: 2px;
-   transition: all 0.3s;
-}
-section.portfolio > nav .bar.state-1 .bar-inner{
-    margin-left: 0;
-    width: 33px;
-}
-section.portfolio > nav .bar.state-2 .bar-inner{
-    margin-left: 72px;
-    width: 33px;
-}
-section.portfolio > nav .bar.state-3 .bar-inner{
-    margin-left: 150px;
-    width: 100px;
-}
-section.portfolio .works{
-    position: relative;
-}
-section.portfolio .works .big,
-section.portfolio .works .small{
-    position: absolute;
+.swiper-button-prev,.swiper-button-next{
+    width: 44px;
+    height: 44px;
 }
