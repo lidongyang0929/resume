@@ -10,28 +10,27 @@ AV.init({
 message.addEventListener('submit',function(e){
      e.preventDefault()
      let content = message.querySelector('input[name=content]').value
+     let name = message.querySelector('input[name=name').value
      var TestObject = AV.Object.extend('message');
      var testObject = new TestObject();
      testObject.save({
+     name: name,
      content: content
      }).then(function(object) {
-     window.location.reload()
+        let li = document.createElement('li')
+        li.innerText = `${object.attributes.name}: ${object.attributes.content}`
+        messageList.appendChild(li)
      })
     })
-
 
     var query = new AV.Query('message');
     query.find().then(function (messages) {
      let array = messages.map((item)=>item.attributes)
       array.forEach((item)=>{
           let li = document.createElement('li')
-          console.log(item.content)
-          li.innerText = item.content
+          li.innerText = `${item.name}: ${item.content}`
           messageList.appendChild(li)
+          message.querySelector('input[name=content]').value = ''
       })
-    }, function (error) {
-      
-    }).then(()=>{},function(error){
-        console.log(error)
-    });
+    }, )
   
