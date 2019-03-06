@@ -1,3 +1,5 @@
+
+
 var specialTags = document.querySelectorAll('[data-x]')
 var minIndex = 0
 findClosest()
@@ -7,6 +9,7 @@ window.addEventListener('scroll',function(){
     findClosest()
     hightlight()
 })
+
 
 
 function findClosest() { 
@@ -28,3 +31,4 @@ function hightlight(){
     li.classList.add('highlight')
     
 }
+

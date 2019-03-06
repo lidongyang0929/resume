@@ -1,3 +1,5 @@
+!function(){
+
 let liTags = document.querySelectorAll('nav.menu > ul > li')
 for (let i = 0; i < liTags.length; i++) {
     liTags[i].onmouseenter = function (x) {
@@ -8,3 +10,4 @@ for (let i = 0; i < liTags.length; i++) {
         x.currentTarget.classList.remove('active')
     }
 }
+}.call()

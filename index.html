@@ -136,6 +136,7 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
+    <div id="mySlides">
     <div class="swiper-container" style="background: grey;">
         <div class="swiper-wrapper">
             <img class="swiper-slide" src="./img/demo-1.jpg">
@@ -148,17 +149,27 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
+  </div>
   </section> 
+  <section  class="myMessage">
+    <h2>留言</h2>
+    <ol id=messageList> 
+      </ol>
+    <form id=message>
+      <input type="text" name="content">
+      <input type="submit">
+    </form>
+  </section>
 
 </body>
 <script src="//at.alicdn.com/t/font_925656_fzf3sqhjjtv.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-<script src="./main.js"></script>
 <script src="./js/swiper.js"></script>
 <script src="./js/topNavBarSticky.js"></script>
 <script src="./js/ActiveMenu.js"></script>
 <script src="./js/highlight.js"></script>
 <script src="./js/smoothMove.js"></script>
 <script src="./js/siteWelcom.js"></script>
-<script src="./js/offset.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.12.0/dist/av-min.js"></script>
+<script src="./js/message.js"></script>
 </html>

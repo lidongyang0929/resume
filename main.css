@@ -285,6 +285,7 @@ section.portfolio{
 
 }
 section.skills > h2,
+section.myMessage > h2,
 section.portfolio > h2{
     text-align: center;
     color: #3D4451;
@@ -340,4 +341,13 @@ section.portfolio h2{
 .swiper-button-prev,.swiper-button-next{
     width: 44px;
     height: 44px;
+}
+section.myMessage ol{
+    width: 720px;
+    margin: 0 auto;
+    border: 1px solid red;
+}
+section.myMessage form{
+    width: 720px;
+    margin: 0 auto;
 }
