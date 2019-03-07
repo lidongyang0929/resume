@@ -1,6 +1,15 @@
 !function(){
 var view = document.querySelector('section.myMessage')
 var model = {
+  init: function(){
+    var APP_ID = 'w9eXin1A4YxK24Nx3bhLeEYA-gzGzoHsz';
+    var APP_KEY = 'HoJmutKwll4OOQMxc9lI9mNi';
+    
+    AV.init({
+      appId: APP_ID,
+      appKey: APP_KEY
+    });
+  },
   fetch: function(){
     var query = new AV.Query('message');
     return query.find()
@@ -22,18 +31,9 @@ var controller = {
     this.view=view
     this.model=model
     this.form = document.querySelector('#form')
-    this.initAV()
+    this.model.init()
     this.loadMessages()
     this.bindEvents()
-  },
-  initAV: function(){
-    var APP_ID = 'w9eXin1A4YxK24Nx3bhLeEYA-gzGzoHsz';
-    var APP_KEY = 'HoJmutKwll4OOQMxc9lI9mNi';
-    
-    AV.init({
-      appId: APP_ID,
-      appKey: APP_KEY
-    });
   },
   bindEvents: function(){
     this.form.addEventListener(('submit'),(e)=>{
