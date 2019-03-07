@@ -27,10 +27,12 @@ var controller = {
   view: null,
   form:null,
   model:null,
+  messageList:null,
   init: function(view,model){
     this.view=view
     this.model=model
-    this.form = document.querySelector('#form')
+    this.form = view.querySelector('#form')
+    this.messageList= view.querySelector('#messageList')
     this.model.init()
     this.loadMessages()
     this.bindEvents()
@@ -44,10 +46,10 @@ var controller = {
   saveMessage: function(){
     let content = this.form.querySelector('input[name=content]').value
     let name = this.form.querySelector('input[name=name').value
-    this.model.save(name,content).then(function(object) {
+    this.model.save(name,content).then(function(messages) {
      let li = document.createElement('li')
-     li.innerText = `${object.attributes.name}: ${object.attributes.content}`
-     messageList.appendChild(li)
+     li.innerText = `${messages.attributes.name}: ${messages.attributes.content}`
+     this.messageList.appendChild(li)
      this.form.querySelector('input[name=content]').value = ''
   })
   },
@@ -58,7 +60,7 @@ var controller = {
       array.forEach((item)=>{
           let li = document.createElement('li')
           li.innerText = `${item.name}: ${item.content}`
-          messageList.appendChild(li)
+          this.messageList.appendChild(li)
          
       })
     }, )
