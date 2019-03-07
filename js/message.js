@@ -46,15 +46,17 @@ var controller = {
   saveMessage: function(){
     let content = this.form.querySelector('input[name=content]').value
     let name = this.form.querySelector('input[name=name').value
+    if(content){
     this.model.save(name,content).then(function(messages) {
      let li = document.createElement('li')
      li.innerText = `${messages.attributes.name}: ${messages.attributes.content}`
      this.messageList.appendChild(li)
      this.form.querySelector('input[name=content]').value = ''
   })
-  },
+  }},
   
    loadMessages: function(){
+     
     this.model.fetch().then(function (messages) {
      let array = messages.map((item)=>item.attributes)
       array.forEach((item)=>{
