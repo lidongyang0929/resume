@@ -1,10 +1,26 @@
 !function(){
 var view = document.querySelector('section.myMessage')
+var model = {
+  fetch: function(){
+    var query = new AV.Query('message');
+    return query.find()
+  },
+  save: function(name,content){
+    var TestObject = AV.Object.extend('message');
+    var testObject = new TestObject();
+    return testObject.save({
+    name: name,
+    content: content
+    })
+  }
+}
 var controller = {
   view: null,
   form:null,
-  init: function(view){
+  model:null,
+  init: function(view,model){
     this.view=view
+    this.model=model
     this.form = document.querySelector('#form')
     this.initAV()
     this.loadMessages()
@@ -28,12 +44,7 @@ var controller = {
   saveMessage: function(){
     let content = this.form.querySelector('input[name=content]').value
     let name = this.form.querySelector('input[name=name').value
-    var TestObject = AV.Object.extend('message');
-    var testObject = new TestObject();
-    testObject.save({
-    name: name,
-    content: content
-    }).then(function(object) {
+    this.model.save(name,content).then(function(object) {
      let li = document.createElement('li')
      li.innerText = `${object.attributes.name}: ${object.attributes.content}`
      messageList.appendChild(li)
@@ -42,8 +53,7 @@ var controller = {
   },
   
    loadMessages: function(){
-    var query = new AV.Query('message');
-    query.find().then(function (messages) {
+    this.model.fetch().then(function (messages) {
      let array = messages.map((item)=>item.attributes)
       array.forEach((item)=>{
           let li = document.createElement('li')
@@ -54,7 +64,7 @@ var controller = {
     }, )
   }
 }
-controller.init(view)
+controller.init(view,model)
 
   
 
